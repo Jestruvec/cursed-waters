@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <title>Three.js Game</title>
-    <script type="module" crossorigin src="/Jestruvec/assets/index-CWW2fJBP.js"></script>
-    <link rel="stylesheet" crossorigin href="/Jestruvec/assets/index-Ct5y-6ce.css">
+    <script type="module" crossorigin src="/Jestruvec/assets/index-B3weJmqJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/Jestruvec/assets/index-CUEb8PcT.css">
   </head>
   <body>
     <div id="container">
       <canvas id="canvas"></canvas>
 
       <div id="chestlife">
-        <progress min="0" max="100" value="100" />
+        <progress min="0" max="10" value="10" />
+      </div>
+
+      <div id="result-screen">
+        <h1>Game over</h1>
+        <p>The chest has been stolen!</p>
+        <button id="restart">Restart</button>
       </div>
 
       <div id="controls">
