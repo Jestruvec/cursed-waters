@@ -29,3 +29,7 @@ cd cursed-waters
 npm install
 npm run dev
 ```
+
+## Licencia
+
+Este proyecto está licenciado bajo la [MIT License](./LICENSE).
