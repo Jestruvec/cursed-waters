@@ -1,0 +1,22 @@
+{
+  "name": "cursed-waters",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/three": "^0.175.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.6"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^25.0.0",
+    "three": "^0.175.0",
+    "three-stdlib": "^2.35.15"
+  },
+  "homepage": "https://jestruvec.github.io/cursed-waters"
+}

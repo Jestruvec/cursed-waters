@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cursed Waters</title>
+    <link rel="icon" href="./pirate_skull_favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./pirate_skull_icon.png" type="image/png" />
+  </head>
+  <body>
+    <div id="container">
+      <canvas id="canvas"></canvas>
+
+      <div id="game-details">
+        <div>
+          <progress
+            id="chestlife-progress"
+            min="0"
+            max="10"
+            value="10"
+          ></progress>
+          <span id="raid-counter">Raid #: 0</span>
+          <span id="gold-counter">Gold: 0</span>
+        </div>
+      </div>
+
+      <div id="result-screen">
+        <div>
+          <h1>Game over</h1>
+          <p>
+            The gem has been destroyed! You can rest now or restart and defend
+            it forever.
+          </p>
+          <p id="quote"></p>
+          <button id="restart-button">Restart</button>
+        </div>
+      </div>
+
+      <div id="initial-screen" class="show">
+        <div>
+          <h1>Cursed Waters</h1>
+          <p>Pirate kit by Quaternius</p>
+          <p>
+            Set to full screen "F11" and turn up the volume for a better
+            experience.
+          </p>
+          <p>Use "WASD" or keyboard arrows and cursor to play</p>
+          <p>New updates almost daily</p>
+          <button id="init-button">Start game</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
