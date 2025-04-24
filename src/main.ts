@@ -1,7 +1,7 @@
 import "./style.css";
 import * as THREE from "three";
 import { setupScene, setupAudio, initMap } from "@/lib/scene";
-// import { quoteService } from "@/lib/services";
+import { quotes } from "@/utils/quotes";
 import {
   initCharacter,
   updateCamera,
@@ -28,7 +28,7 @@ import {
   handleResize,
 } from "@/lib/helpers";
 import { loadModels } from "@/assets/models";
-// import { getRandomItem } from "@/lib/helpers/randomUtils";
+import { getRandomItem } from "@/lib/helpers/randomUtils";
 import { getDOMElements } from "@/utils/domElements";
 
 const {
@@ -40,7 +40,7 @@ const {
   restartButton,
   initButton,
   goldCounter,
-  // quote,
+  quote,
 } = getDOMElements();
 
 const { scene, camera, renderer, clock, sun, uniforms, sunLight } =
@@ -52,9 +52,6 @@ const main = async () => {
   let isDay = true;
 
   await loadModels();
-
-  // const { fetchQuotes } = quoteService();
-  // const quotes = await fetchQuotes();
 
   const { gem, mako, waterMaterial } = initMap(scene);
   const { listener } = setupAudio();
@@ -133,8 +130,8 @@ const main = async () => {
 
     setTimeout(() => {
       document.exitPointerLock();
-      // const randomQuote = getRandomItem(quotes);
-      // quote.innerText = `"${randomQuote.q}" - ${randomQuote.a}`;
+      const randomQuote = getRandomItem(quotes);
+      quote.innerText = `"${randomQuote.q}" - ${randomQuote.a}`;
 
       resultScreenEl.classList.add("show");
 
