@@ -47,6 +47,7 @@ const { scene, camera, renderer, clock, sun, uniforms, sunLight } =
   setupScene(canvas);
 
 const main = async () => {
+  initButton.disabled = true;
   let gameover = false;
   let isDay = true;
 
