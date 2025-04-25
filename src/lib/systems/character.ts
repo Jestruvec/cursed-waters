@@ -6,6 +6,7 @@ import {
   CAMERA_HEIGHT,
   CHARACTER_SPEED,
   CHARACTER_LIFE,
+  CHARACTER_INITIAL_POSITION,
 } from "@/lib/constants/gameSettings";
 import { getRandomItem, keysPressed, mouseDeltaX } from "@/lib/helpers";
 import {
@@ -32,7 +33,8 @@ const createCharacterSystem = () => {
   const restartSystem = () => {
     character.isDying = false;
     character.healthPoints = CHARACTER_LIFE;
-    character.model.position.set(0, 0, 3);
+    const { x, y, z } = CHARACTER_INITIAL_POSITION;
+    character.model.position.set(x, y, z);
 
     animationSystem.stop(character, "death");
     animationSystem.play(character, "idle");

@@ -1,5 +1,3 @@
-import * as THREE from "three";
-
 const CAMERA_SETTINGS = {
   fov: 50,
   near: 0.1,
@@ -10,7 +8,7 @@ const CAMERA_SETTINGS = {
 };
 const MAP_SIZE = 100;
 const HALF = MAP_SIZE / 2;
-const CHARACTER_INITIAL_POSITION = new THREE.Vector3(0, 0, 3);
+const CHARACTER_INITIAL_POSITION = { x: 0, y: 0, z: 3 };
 const TILE_SIZE = 1;
 const SAND_COLOR = 0xdeb887;
 const WATER_COLOR = 0x1e90ff;

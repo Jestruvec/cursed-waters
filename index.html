@@ -5,6 +5,15 @@
     <title>Cursed Waters</title>
     <link rel="icon" href="./pirate_skull_favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./pirate_skull_icon.png" type="image/png" />
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+      body.loaded {
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <div id="container">
@@ -51,5 +60,10 @@
     </div>
 
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
   </body>
 </html>
