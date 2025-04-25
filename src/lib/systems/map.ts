@@ -1,10 +1,7 @@
 import * as THREE from "three";
 import { setupScene } from "@/lib/scene/setupScene";
-import {
-  animatedModelSystem,
-  animationSystem,
-  randomizeModel,
-} from "@/lib/helpers";
+import { randomizeModel } from "@/lib/helpers";
+import { animatedModelSystem, animationSystem } from "@/lib/systems";
 import {
   sandDiffuseTexture,
   sandDisplacementTexture,
@@ -19,7 +16,7 @@ import {
   MAP_SIZE,
   ROCK_SPAWN_PROB,
   PALM_SPAWN_PROB,
-} from "@/lib/constants/Constants";
+} from "@/lib/constants/constants";
 
 const createMapSystem = () => {
   const { scene } = setupScene();

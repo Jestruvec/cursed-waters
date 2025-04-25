@@ -1,4 +1,4 @@
-import { mobSystem } from "./";
+import { mobSystem } from "@/lib/systems";
 import { getDOMElements } from "@/utils/domElements";
 import {
   RAID_COOLDOWN,
@@ -7,7 +7,7 @@ import {
   MOB_RESPAWN_DELAY_FACTOR,
   MOB_RESPAWN_DELAY,
   MIN_MOB_RESPAWN_DELAY,
-} from "@/lib/constants/Constants";
+} from "@/lib/constants/constants";
 
 const createRaidSystem = () => {
   const { raidCounterDOM } = getDOMElements();

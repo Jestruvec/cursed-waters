@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import { createMesh } from "@/lib/helpers/meshHelper";
+import { clone } from "three/examples/jsm/utils/SkeletonUtils";
+import { createMesh } from "@/lib/helpers";
 import * as GLBS from "@/assets/glbs";
 import { AnimatedModel } from "@/lib/types/AnimatedModel";
-import { clone } from "three/examples/jsm/utils/SkeletonUtils";
 
 export type ModelKey =
   | "anne"

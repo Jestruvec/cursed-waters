@@ -1,8 +1,8 @@
 import "./style.css";
 import { getDOMElements } from "@/utils/domElements";
 import { setupScene } from "@/lib/scene";
+import { initEventListeners, handleResize, quoteHelper } from "@/lib/helpers";
 import {
-  initEventListeners,
   initAnimationSystem,
   initSoundSystem,
   initMobSystem,
@@ -19,9 +19,7 @@ import {
   mobSystem,
   lootSystem,
   raidSystem,
-  handleResize,
-  quoteHelper,
-} from "@/lib/helpers";
+} from "@/lib/systems";
 
 const {
   canvasDOM,
@@ -55,14 +53,12 @@ const main = async () => {
   const gameOver = () => {
     characterSystem.gameOver();
     soundSystem.gameOver();
+    raidSystem.finishRaid();
 
     setTimeout(() => {
       document.exitPointerLock();
       quoteHelper.setQuote();
-
       resultScreenDOM.classList.add("show");
-
-      raidSystem.finishRaid();
       renderer.setAnimationLoop(null);
     }, 2000);
   };

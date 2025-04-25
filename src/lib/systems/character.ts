@@ -1,23 +1,19 @@
 import * as THREE from "three";
 import { setupScene } from "@/lib/scene/setupScene";
-import {
-  animatedModelSystem,
-  ModelKey,
-} from "@/lib/helpers/animatedModelSystem";
 import { getDOMElements } from "@/utils/domElements";
 import {
   CAMERA_DISTANCE,
   CAMERA_HEIGHT,
   CHARACTER_SPEED,
   CHARACTER_LIFE,
-} from "../constants/Constants";
+} from "@/lib/constants/constants";
+import { getRandomItem, keysPressed, mouseDeltaX } from "@/lib/helpers";
 import {
   animationSystem,
-  getRandomItem,
-  keysPressed,
   lootSystem,
-  mouseDeltaX,
-} from "@/lib/helpers";
+  animatedModelSystem,
+  ModelKey,
+} from "@/lib/systems";
 
 const createCharacterSystem = () => {
   const { scene, camera } = setupScene();

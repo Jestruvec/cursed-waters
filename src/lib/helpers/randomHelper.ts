@@ -1,4 +1,4 @@
-import { AnimatedModel } from "../types/AnimatedModel";
+import { AnimatedModel } from "@/lib/types/AnimatedModel";
 
 export const outsideCenter = (min: number, max: number): number => {
   const value =

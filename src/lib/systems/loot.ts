@@ -1,11 +1,11 @@
 import * as THREE from "three";
-import { AnimatedModel } from "../types/AnimatedModel";
-import { LOOT_PICK_RADIUS, LOOT_EXPIRES_TIME } from "@/lib/constants/Constants";
+import { AnimatedModel } from "@/lib/types/AnimatedModel";
+import { LOOT_PICK_RADIUS, LOOT_EXPIRES_TIME } from "@/lib/constants/constants";
 import {
   soundSystem,
   animatedModelSystem,
   characterSystem,
-} from "@/lib/helpers";
+} from "@/lib/systems";
 import { setupScene } from "@/lib/scene";
 import { getDOMElements } from "@/utils/domElements";
 

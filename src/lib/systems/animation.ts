@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { AnimatedModel } from "../types/AnimatedModel";
+import { AnimatedModel } from "@/lib/types/AnimatedModel";
 
 const createAnimationSystem = () => {
   const getAction = (model: AnimatedModel, clipName: string) => {

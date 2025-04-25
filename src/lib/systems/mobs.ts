@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import { AnimatedModel } from "@/lib/types/AnimatedModel";
-import { animationSystem, inRange, soundSystem } from "@/lib/helpers";
+import { inRange } from "@/lib/helpers";
 import { getDOMElements } from "@/utils/domElements";
-import { lootSystem } from "@/lib/helpers";
+import { lootSystem, animationSystem, soundSystem } from "@/lib/systems";
 import { setupScene } from "@/lib/scene";
 import {
   ATTACK_COOLDOWN,
@@ -10,11 +10,8 @@ import {
   MOB_SPEED,
   CHEST_HIT_RANGE,
   HALF,
-} from "@/lib/constants/Constants";
-import {
-  animatedModelSystem,
-  ModelKey,
-} from "@/lib/helpers/animatedModelSystem";
+} from "@/lib/constants/constants";
+import { animatedModelSystem, ModelKey } from "@/lib/systems/animatedModels";
 
 const createMobSystem = () => {
   const { getModel } = animatedModelSystem;

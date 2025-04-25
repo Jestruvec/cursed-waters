@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import { setupScene } from "../scene";
-import { soundSystem } from "./soundSystem";
-import { DAY_DURATION_FACTOR } from "../constants/Constants";
+import { setupScene } from "@/lib/scene";
+import { soundSystem } from "@/lib/systems";
+import { DAY_DURATION_FACTOR } from "@/lib/constants/constants";
 
 const createDayAndNightSystem = () => {
   let isDay = true;
