@@ -22,7 +22,7 @@ const createLootSystem = () => {
   const { goldCounterDOM, characterLifeDOM } = getDOMElements();
   const { scene } = setupScene();
   const lootItems: LootItem[] = [];
-  const inventary: LootItem[] = [];
+  let inventary: LootItem[] = [];
 
   const dropLoot = (position: THREE.Vector3) => {
     if (Math.random() < 0.3) {
@@ -102,8 +102,8 @@ const createLootSystem = () => {
   };
 
   const restartSystem = () => {
-    lootSystem.inventary = [];
-    goldCounterDOM.innerText = `Gold: ${lootSystem.inventary.length}`;
+    inventary = [];
+    goldCounterDOM.innerText = `Gold: ${inventary.length}`;
   };
 
   return {
