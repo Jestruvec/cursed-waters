@@ -5,7 +5,16 @@
     <title>Cursed Waters</title>
     <link rel="icon" href="./pirate_skull_favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./pirate_skull_icon.png" type="image/png" />
-    <script type="module" crossorigin src="/cursed-waters/assets/index-B_KB04CC.js"></script>
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+      body.loaded {
+        opacity: 1;
+      }
+    </style>
+    <script type="module" crossorigin src="/cursed-waters/assets/index-rF5aH70_.js"></script>
     <link rel="stylesheet" crossorigin href="/cursed-waters/assets/index-CXucpG2U.css">
   </head>
   <body>
@@ -52,5 +61,10 @@
       </div>
     </div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
   </body>
 </html>
