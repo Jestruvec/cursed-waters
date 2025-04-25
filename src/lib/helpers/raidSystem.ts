@@ -10,7 +10,7 @@ import {
 } from "@/lib/constants/Constants";
 
 const createRaidSystem = () => {
-  const { raidCounter } = getDOMElements();
+  const { raidCounterDOM } = getDOMElements();
   const { mobs, initMob } = mobSystem;
   let interval: any;
   let timeout: any;
@@ -61,10 +61,16 @@ const createRaidSystem = () => {
 
   const updateRaidCounter = () => {
     console.log("Actualizando raid:", raidCount.count);
-    raidCounter.textContent = `Raid #: ${raidCount.count}`;
+    raidCounterDOM.textContent = `Raid #: ${raidCount.count}`;
   };
 
-  return { initRaid, finishRaid, raidCount, updateRaidCounter };
+  const restartSystem = () => {
+    raidSystem.raidCount.count = 0;
+    raidSystem.updateRaidCounter();
+    raidSystem.initRaid();
+  };
+
+  return { initRaid, finishRaid, raidCount, updateRaidCounter, restartSystem };
 };
 
 export let raidSystem: ReturnType<typeof createRaidSystem>;

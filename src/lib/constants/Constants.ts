@@ -1,3 +1,5 @@
+import * as THREE from "three";
+
 const CAMERA_SETTINGS = {
   fov: 50,
   near: 0.1,
@@ -8,7 +10,7 @@ const CAMERA_SETTINGS = {
 };
 const MAP_SIZE = 100;
 const HALF = MAP_SIZE / 2;
-const CHARACTER_INITIAL_POSITION = { x: 0, y: 0, z: 3 };
+const CHARACTER_INITIAL_POSITION = new THREE.Vector3(0, 0, 3);
 const TILE_SIZE = 1;
 const SAND_COLOR = 0xdeb887;
 const WATER_COLOR = 0x1e90ff;
@@ -29,8 +31,14 @@ const MIN_MOB_RESPAWN_DELAY = 500;
 const MOB_RESPAWN_DELAY_FACTOR = 200;
 const DAY_DURATION_FACTOR = 0.05;
 const CHARACTER_SPEED = 5;
+const CAMERA_DISTANCE = 5;
+const CAMERA_HEIGHT = 3;
+const CHARACTER_LIFE = 10;
 
 export {
+  CHARACTER_LIFE,
+  CAMERA_DISTANCE,
+  CAMERA_HEIGHT,
   CHARACTER_SPEED,
   DAY_DURATION_FACTOR,
   MIN_MOB_RESPAWN_DELAY,

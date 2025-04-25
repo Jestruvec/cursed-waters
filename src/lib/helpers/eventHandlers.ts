@@ -1,10 +1,7 @@
 import { setupScene } from "@/lib/scene/";
-import { getDOMElements } from "@/utils/domElements";
-
-const { canvas } = getDOMElements();
 
 export const keysPressed = new Set<string>();
-const { camera, renderer } = setupScene(canvas);
+const { camera, renderer } = setupScene();
 export let mouseDeltaX = 0;
 export let mouseDeltaY = 0;
 let mouseMoveTimeout: ReturnType<typeof setTimeout> | null = null;

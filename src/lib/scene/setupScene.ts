@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { Sky } from "three/examples/jsm/objects/Sky.js";
+import { getDOMElements } from "@/utils/domElements";
 
 let instance: {
   scene: THREE.Scene;
@@ -11,11 +12,12 @@ let instance: {
   uniforms: any;
 } | null = null;
 
-export const setupScene = (canvasDOM: HTMLCanvasElement) => {
+export const setupScene = () => {
   if (instance) {
     return instance;
   }
 
+  const { canvasDOM } = getDOMElements();
   const scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0xaaaaaa, 10, 20);
 

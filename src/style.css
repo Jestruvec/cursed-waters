@@ -85,29 +85,29 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+#game-details span {
+  font-weight: 700;
+  color: white;
+}
+
 #game-details progress {
   width: 10rem;
   height: 1rem;
   border-radius: 0.5rem;
 }
 
-#game-details span {
-  font-weight: 700;
-  color: white;
-}
-
 /* Para navegadores WebKit (Chrome, Safari) */
-#chestlife progress::-webkit-progress-bar {
+#game-details progress::-webkit-progress-bar {
   background-color: #fff;
 }
 
-#chestlife progress::-webkit-progress-value {
+#game-details progress::-webkit-progress-value {
   background-color: #44ff44;
   transition: width 0.2s ease;
 }
 
 /* Para Firefox */
-#chestlife progress::-moz-progress-bar {
+#game-details progress::-moz-progress-bar {
   background-color: #44ff44;
 }
 

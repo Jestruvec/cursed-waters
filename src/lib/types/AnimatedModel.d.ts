@@ -3,6 +3,7 @@ export interface AnimatedModel {
   animations: THREE.AnimationClip[];
   mixer: THREE.AnimationMixer;
   update: (delta: number) => void;
+  healthPoints?: number;
   isDying?: boolean;
   difficulty?: number;
 }

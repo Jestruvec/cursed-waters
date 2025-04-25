@@ -11,16 +11,46 @@ import {
   CHEST_HIT_RANGE,
   HALF,
 } from "@/lib/constants/Constants";
-import { getModel, ModelKey } from "@/assets/models";
+import {
+  animatedModelSystem,
+  ModelKey,
+} from "@/lib/helpers/animatedModelSystem";
 
 const createMobSystem = () => {
-  const { chestLifeEl, canvas } = getDOMElements();
-  const { scene } = setupScene(canvas);
+  const { getModel } = animatedModelSystem;
+  const { characterLifeDOM } = getDOMElements();
+  const { scene } = setupScene();
   let lastAttackTime = 0;
   const mobs: AnimatedModel[] = [];
   const tmpDirection = new THREE.Vector3();
   const tmpCharacterPos = new THREE.Vector3();
   const targetPoint = new THREE.Vector3(0, 0, 0);
+
+  const initMob = (difficulty: number) => {
+    const mobOptions: ModelKey[] = ["skeleton", "skeleton_headless", "sharky"];
+    const randomIndex = Math.floor(Math.random() * mobOptions.length);
+    const selectedMob = mobOptions[randomIndex];
+
+    const mob = { ...getModel(selectedMob), difficulty };
+
+    // Intentar hasta encontrar una posición en el agua
+    let x: number, z: number, distanceFromCenter: number;
+
+    do {
+      x = inRange(-HALF, HALF);
+      z = inRange(-HALF, HALF);
+      distanceFromCenter = Math.sqrt(x * x + z * z);
+    } while (distanceFromCenter <= HALF * 0.5); // si es <=, está en tierra
+
+    mob.model.position.set(x, 0, z);
+    mob.model.rotation.y = Math.PI;
+
+    animationSystem.play(mob, "walk");
+
+    scene.add(mob.model);
+
+    return mob;
+  };
 
   const moveMobTowards = (
     mob: AnimatedModel,
@@ -61,12 +91,7 @@ const createMobSystem = () => {
     }, 2000);
   };
 
-  const updateMobs = (
-    delta: number,
-    chestLife: { value: number },
-    character: AnimatedModel,
-    now: number
-  ) => {
+  const updateMobs = (delta: number, character: AnimatedModel, now: number) => {
     tmpCharacterPos.copy(character.model.position);
 
     for (let i = mobs.length - 1; i >= 0; i--) {
@@ -84,6 +109,7 @@ const createMobSystem = () => {
         mob.model.position.distanceTo(tmpCharacterPos);
       const distanceToChest = mob.model.position.distanceTo(targetPoint);
 
+      // matar el mob
       if (
         distanceToCharacter < ATTACK_RANGE &&
         now - lastAttackTime > ATTACK_COOLDOWN
@@ -93,9 +119,13 @@ const createMobSystem = () => {
         continue;
       }
 
-      if (distanceToChest < CHEST_HIT_RANGE) {
-        chestLife.value = Math.max(0, chestLife.value - 1);
-        chestLifeEl.value = chestLife.value;
+      // reduccion de vida
+      if (
+        distanceToChest < CHEST_HIT_RANGE &&
+        character.healthPoints !== undefined
+      ) {
+        character.healthPoints = Math.max(0, character.healthPoints - 1);
+        characterLifeDOM.value = character.healthPoints;
 
         soundSystem.play("hit");
 
@@ -108,32 +138,6 @@ const createMobSystem = () => {
     }
   };
 
-  const initMob = (difficulty: number) => {
-    const mobOptions: ModelKey[] = ["skeleton", "skeleton_headless", "sharky"];
-    const randomIndex = Math.floor(Math.random() * mobOptions.length);
-    const selectedMob = mobOptions[randomIndex];
-
-    const mob = { ...getModel(selectedMob), difficulty };
-
-    // Intentar hasta encontrar una posición en el agua
-    let x: number, z: number, distanceFromCenter: number;
-
-    do {
-      x = inRange(-HALF, HALF);
-      z = inRange(-HALF, HALF);
-      distanceFromCenter = Math.sqrt(x * x + z * z);
-    } while (distanceFromCenter <= HALF * 0.5); // si es <=, está en tierra
-
-    mob.model.position.set(x, 0, z);
-    mob.model.rotation.y = Math.PI;
-
-    animationSystem.play(mob, "walk");
-
-    scene.add(mob.model);
-
-    return mob;
-  };
-
   const removeAllMobs = () => {
     for (let i = mobs.length - 1; i >= 0; i--) {
       const skeleton = mobs[i];
@@ -142,7 +146,12 @@ const createMobSystem = () => {
     }
   };
 
-  return { updateMobs, initMob, mobs, removeAllMobs };
+  const restartSystem = () => {
+    lastAttackTime = 0;
+    removeAllMobs();
+  };
+
+  return { updateMobs, initMob, mobs, restartSystem };
 };
 
 export let mobSystem: ReturnType<typeof createMobSystem>;

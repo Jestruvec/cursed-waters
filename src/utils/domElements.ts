@@ -1,16 +1,22 @@
 export const getDOMElements = () => ({
-  canvas: document.querySelector("canvas") as HTMLCanvasElement,
-  initScreenEl: document.querySelector("#initial-screen") as HTMLDivElement,
-  resultScreenEl: document.querySelector("#result-screen") as HTMLDivElement,
-  chestLifeEl: document.getElementById(
-    "chestlife-progress"
+  canvasDOM: document.querySelector("canvas") as HTMLCanvasElement,
+  initScreenDOM: document.querySelector("#initial-screen") as HTMLDivElement,
+  resultScreenDOM: document.querySelector("#result-screen") as HTMLDivElement,
+  characterLifeDOM: document.getElementById(
+    "character-life-progress"
   ) as HTMLProgressElement,
-  restartButton: document.getElementById("restart-button") as HTMLButtonElement,
-  initButton: document.getElementById("init-button") as HTMLButtonElement,
-  raidCounter: document.getElementById("raid-counter") as HTMLSpanElement,
-  goldCounter: document.getElementById("gold-counter") as HTMLSpanElement,
-  quote: document.getElementById("quote") as HTMLElement,
-  survivedRaids: document.getElementById("survived-raids") as HTMLSpanElement,
-  collectedGold: document.getElementById("collected-gold") as HTMLSpanElement,
-  gameDetails: document.getElementById("game-details") as HTMLDivElement,
+  restartButtonDOM: document.getElementById(
+    "restart-button"
+  ) as HTMLButtonElement,
+  initButtonDOM: document.getElementById("init-button") as HTMLButtonElement,
+  raidCounterDOM: document.getElementById("raid-counter") as HTMLSpanElement,
+  goldCounterDOM: document.getElementById("gold-counter") as HTMLSpanElement,
+  quoteDOM: document.getElementById("quote") as HTMLElement,
+  survivedRaidsDOM: document.getElementById(
+    "survived-raids"
+  ) as HTMLSpanElement,
+  collectedGoldDOM: document.getElementById(
+    "collected-gold"
+  ) as HTMLSpanElement,
+  gameDetailsDOM: document.getElementById("game-details") as HTMLDivElement,
 });

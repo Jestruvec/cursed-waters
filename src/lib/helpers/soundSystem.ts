@@ -12,6 +12,8 @@ type Sound =
   | "seagul";
 
 const createSoundSystem = () => {
+  const { listener } = setupAudio();
+
   const {
     oceanSound,
     jungleNightSound,
@@ -69,7 +71,20 @@ const createSoundSystem = () => {
     }
   };
 
-  return { play, stop };
+  const restartSystem = () => {
+    soundSystem.stop("gameOver");
+    soundSystem.play("jungleNight");
+    soundSystem.play("ocean");
+  };
+
+  const gameOver = () => {
+    soundSystem.play("gameOver");
+    soundSystem.stop("ocean");
+    soundSystem.stop("jungleNight");
+    soundSystem.stop("seagul");
+  };
+
+  return { play, stop, listener, restartSystem, gameOver };
 };
 
 export let soundSystem: ReturnType<typeof createSoundSystem>;

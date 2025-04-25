@@ -1,6 +1,7 @@
 import Pirate_Captain from "./Pirate_Captain.glb";
 import Mako from "./Mako.glb";
 import Anne from "./Anne.glb";
+import Henry from "./Henry.glb";
 
 import Ship from "./Ship.glb";
 
@@ -30,6 +31,7 @@ import Chicken_Leg from "./Chicken_Leg.glb";
 import Gem_Pink from "./Gem_Pink.glb";
 
 export {
+  Henry,
   Chicken_Leg,
   Anne,
   Gem_Pink,
