@@ -117,7 +117,6 @@ const createCharacterSystem = () => {
   };
 
   scene.add(character.model);
-  restartSystem();
 
   return { updateCharacter, character, restartSystem, gameOver };
 };

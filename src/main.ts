@@ -1,6 +1,6 @@
 import "./style.css";
+import { getDOMElements } from "@/utils/domElements";
 import { setupScene } from "@/lib/scene";
-import { quotes } from "@/utils/quotes";
 import {
   initEventListeners,
   initAnimationSystem,
@@ -20,9 +20,8 @@ import {
   lootSystem,
   raidSystem,
   handleResize,
+  quoteHelper,
 } from "@/lib/helpers";
-import { getRandomItem } from "@/lib/helpers/randomUtils";
-import { getDOMElements } from "@/utils/domElements";
 
 const {
   canvasDOM,
@@ -31,7 +30,6 @@ const {
   gameDetailsDOM,
   restartButtonDOM,
   initButtonDOM,
-  quoteDOM,
 } = getDOMElements();
 
 const main = async () => {
@@ -60,8 +58,7 @@ const main = async () => {
 
     setTimeout(() => {
       document.exitPointerLock();
-      const randomQuote = getRandomItem(quotes);
-      quoteDOM.innerText = `"${randomQuote.q}" - ${randomQuote.a}`;
+      quoteHelper.setQuote();
 
       resultScreenDOM.classList.add("show");
 

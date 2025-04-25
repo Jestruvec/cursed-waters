@@ -11,3 +11,4 @@ export * from "./dayAndNightSystem";
 export * from "./characterSystem";
 export * from "./animatedModelSystem";
 export * from "./mapSystem";
+export * from "./quoteHelper";
