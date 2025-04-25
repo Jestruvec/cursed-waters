@@ -1,27 +1,27 @@
 # 🏝️ Cursed Waters
 
-Un juego 3D hecho con [Three.js](https://threejs.org/) y TypeScript donde defiendes una gema flotante en una isla tropical de oleadas de enemigos (mobs). El juego escala en dificultad por raids, y puedes curar y mejorar recolectando loot.
+A 3D game built with [Three.js](https://threejs.org/) and TypeScript where you defend a floating gem on a tropical island from waves of enemies (mobs). The game increases in difficulty with each raid, and you can heal and upgrade by collecting loot.
 
-## 🎮 Características
+## 🎮 Features
 
-- Gema con 10 de vida
-- Raids de enemigos más difíciles con el tiempo
-- Loot aleatorio
-- Efectos de sonido dinámicos
-- Modelos 3D (creditos: [Poly Pizza](https://poly.pizza/bundle/Pirate-kit-0q5ulmIYqQ))
-- Sonido ambiente y música de fondo
-- Ciclo día/noche visual y sonoro
+- 10 health points
+- Increasingly difficult enemy raids over time
+- Random loot
+- Dynamic sound effects
+- 3D models (credits: [Poly Pizza](https://poly.pizza/bundle/Pirate-kit-0q5ulmIYqQ))
+- Ambient sounds and background music
+- Visual and audio day/night cycle
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 - [Three.js](https://threejs.org/)
 - TypeScript
 
 ## 🔗 Demo
 
-👉 [Juega aquí](https://jestruvec.github.io/cursed-waters/)
+👉 [Play here](https://jestruvec.github.io/cursed-waters/)
 
-## 📦 Instalación local
+## 📦 Local Installation
 
 ```bash
 git clone https://github.com/Jestruvec/cursed-waters.git
@@ -30,6 +30,6 @@ npm install
 npm run dev
 ```
 
-## Licencia
+## License
 
-Este proyecto está licenciado bajo la [MIT License](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
