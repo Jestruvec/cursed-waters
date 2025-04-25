@@ -1,6 +1,9 @@
 import * as THREE from "three";
 import { AnimatedModel } from "@/lib/types/AnimatedModel";
-import { LOOT_PICK_RADIUS, LOOT_EXPIRES_TIME } from "@/lib/constants/constants";
+import {
+  LOOT_PICK_RADIUS,
+  LOOT_EXPIRES_TIME,
+} from "@/lib/constants/gameSettings";
 import {
   soundSystem,
   animatedModelSystem,

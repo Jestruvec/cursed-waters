@@ -16,7 +16,7 @@ import {
   MAP_SIZE,
   ROCK_SPAWN_PROB,
   PALM_SPAWN_PROB,
-} from "@/lib/constants/constants";
+} from "@/lib/constants/gameSettings";
 
 const createMapSystem = () => {
   const { scene } = setupScene();

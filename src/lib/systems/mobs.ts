@@ -10,7 +10,7 @@ import {
   MOB_SPEED,
   CHEST_HIT_RANGE,
   HALF,
-} from "@/lib/constants/constants";
+} from "@/lib/constants/gameSettings";
 import { animatedModelSystem, ModelKey } from "@/lib/systems/animatedModels";
 
 const createMobSystem = () => {

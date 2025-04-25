@@ -6,7 +6,7 @@ import {
   CAMERA_HEIGHT,
   CHARACTER_SPEED,
   CHARACTER_LIFE,
-} from "@/lib/constants/constants";
+} from "@/lib/constants/gameSettings";
 import { getRandomItem, keysPressed, mouseDeltaX } from "@/lib/helpers";
 import {
   animationSystem,

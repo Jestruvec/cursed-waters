@@ -7,7 +7,7 @@ import {
   MOB_RESPAWN_DELAY_FACTOR,
   MOB_RESPAWN_DELAY,
   MIN_MOB_RESPAWN_DELAY,
-} from "@/lib/constants/constants";
+} from "@/lib/constants/gameSettings";
 
 const createRaidSystem = () => {
   const { raidCounterDOM } = getDOMElements();
