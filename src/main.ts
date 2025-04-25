@@ -52,10 +52,6 @@ const main = async () => {
 
     resultScreenDOM.classList.remove("show");
     renderer.setAnimationLoop(animate);
-
-    console.log(renderer.domElement === canvasDOM);
-    console.log(scene.children.length);
-    console.log(camera.position);
   };
 
   const gameOver = () => {
@@ -105,7 +101,6 @@ const main = async () => {
   };
 
   await initAnimatedModelSystem();
-
   initAnimationSystem();
   initSoundSystem();
   initMapSystem();
@@ -114,7 +109,6 @@ const main = async () => {
   initMobSystem();
   initRaidSystem();
   initLootSystem();
-
   initEventListeners();
 
   restartGame();
