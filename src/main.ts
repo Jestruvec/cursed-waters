@@ -31,9 +31,10 @@ const {
 } = getDOMElements();
 
 const main = async () => {
-  const { scene, camera, renderer, clock } = setupScene();
   initButtonDOM.disabled = true;
   initButtonDOM.innerText = "Loading...";
+
+  const { scene, camera, renderer, clock } = setupScene();
   let gameover = false;
 
   const restartGame = () => {
@@ -78,7 +79,7 @@ const main = async () => {
     canvasDOM.requestPointerLock();
 
     mapSystem.updateSystem(delta, elapsed);
-    dayAndNightSystem.updateSun(elapsed);
+    dayAndNightSystem.updateSystem(elapsed);
     characterSystem.updateCharacter(delta);
     mobSystem.updateMobs(delta, character, elapsed);
     lootSystem.animateLoot();

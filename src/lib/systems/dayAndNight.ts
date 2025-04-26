@@ -7,7 +7,7 @@ const createDayAndNightSystem = () => {
   let isDay = true;
   const { sun, uniforms, sunLight } = setupScene();
 
-  const updateSun = (time: number) => {
+  const updateSystem = (time: number) => {
     const phi = THREE.MathUtils.degToRad(
       90 - 45 * Math.sin(time * DAY_DURATION_FACTOR)
     );
@@ -33,7 +33,7 @@ const createDayAndNightSystem = () => {
     }
   };
 
-  return { updateSun };
+  return { updateSystem };
 };
 
 export let dayAndNightSystem: ReturnType<typeof createDayAndNightSystem>;
