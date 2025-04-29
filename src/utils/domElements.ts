@@ -19,4 +19,8 @@ export const getDOMElements = () => ({
     "collected-gold"
   ) as HTMLSpanElement,
   gameDetailsDOM: document.getElementById("game-details") as HTMLDivElement,
+  joystickDOM: document.getElementById("joystick") as HTMLDivElement,
+  joystickContainerDOM: document.getElementById(
+    "joystick-container"
+  ) as HTMLDivElement,
 });

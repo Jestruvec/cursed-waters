@@ -8,7 +8,7 @@ import {
   CHARACTER_LIFE,
   CHARACTER_INITIAL_POSITION,
 } from "@/lib/constants/gameSettings";
-import { getRandomItem, keysPressed, mouseDeltaX } from "@/lib/helpers";
+import { getRandomItem, getEffectiveKeys, mouseDeltaX } from "@/lib/helpers";
 import {
   animationSystem,
   lootSystem,
@@ -66,6 +66,8 @@ const createCharacterSystem = () => {
     forward.normalize();
 
     right.crossVectors(forward, up).normalize();
+
+    const keysPressed = getEffectiveKeys();
 
     if (keysPressed.has("w") || keysPressed.has("arrowup"))
       direction.add(forward);

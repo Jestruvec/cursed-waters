@@ -6,10 +6,13 @@ import {
   handleTouchStart,
   handleTouchMove,
   handleTouchEnd,
+  handleJoystickTouchStar,
+  handleJoystickTouchMove,
+  handleJoystickTouchEnd,
 } from "@/lib/helpers";
 import { getDOMElements } from "@/utils/domElements";
 
-const { canvasDOM } = getDOMElements();
+const { canvasDOM, joystickContainerDOM } = getDOMElements();
 
 export const initEventListeners = () => {
   document.addEventListener("keydown", handleKeydown);
@@ -19,4 +22,7 @@ export const initEventListeners = () => {
   document.addEventListener("touchstart", handleTouchStart, { passive: true });
   document.addEventListener("touchmove", handleTouchMove, { passive: true });
   document.addEventListener("touchend", handleTouchEnd);
+  joystickContainerDOM.addEventListener("touchstart", handleJoystickTouchStar);
+  joystickContainerDOM.addEventListener("touchmove", handleJoystickTouchMove);
+  joystickContainerDOM.addEventListener("touchend", handleJoystickTouchEnd);
 };
