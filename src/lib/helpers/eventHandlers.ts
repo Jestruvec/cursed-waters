@@ -1,4 +1,5 @@
 import { setupScene } from "@/lib/scene/";
+import { getDOMElements } from "@/utils/domElements";
 
 export const keysPressed = new Set<string>();
 const { camera, renderer } = setupScene();
@@ -6,7 +7,11 @@ export let mouseDeltaX = 0;
 export let mouseDeltaY = 0;
 let mouseMoveTimeout: ReturnType<typeof setTimeout> | null = null;
 
-export const handleClick = () => {};
+const { canvasDOM } = getDOMElements();
+
+export const handleClick = () => {
+  canvasDOM.requestPointerLock();
+};
 
 export const handleMouseMove = (e: MouseEvent) => {
   if (document.pointerLockElement === renderer.domElement) {

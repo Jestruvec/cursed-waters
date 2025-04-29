@@ -22,7 +22,6 @@ import {
 } from "@/lib/systems";
 
 const {
-  canvasDOM,
   initScreenDOM,
   resultScreenDOM,
   gameDetailsDOM,
@@ -76,7 +75,6 @@ const main = async () => {
     }
 
     const elapsed = clock.getElapsedTime();
-    canvasDOM.requestPointerLock();
 
     mapSystem.updateSystem(delta, elapsed);
     dayAndNightSystem.updateSystem(elapsed);
