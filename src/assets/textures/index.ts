@@ -1,9 +1,9 @@
-import sandDiffuseTexture from "./aerial_beach/aerial_beach_diffuse.jpg";
-import sandDisplacementTexture from "./aerial_beach/aerial_beach_displacement.png";
-import sandNormalTexture from "./aerial_beach/aerial_beach_normal.png";
-import sandRoughnessTexture from "./aerial_beach/aerial_beach_rough.png";
+import sandDiffuseTexture from "./beach/beach_diffuse.webp";
+import sandDisplacementTexture from "./beach/beach_displacement.webp";
+import sandNormalTexture from "./beach/beach_normal.webp";
+import sandRoughnessTexture from "./beach/beach_rough.webp";
 
-import waterNormalTexture from "./water_normal.jpg";
+import waterNormalTexture from "./water/water_normal.webp";
 
 export {
   waterNormalTexture,
