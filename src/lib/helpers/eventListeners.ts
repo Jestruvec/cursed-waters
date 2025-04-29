@@ -3,6 +3,9 @@ import {
   handleMouseMove,
   handleKeydown,
   handleKeyup,
+  handleTouchStart,
+  handleTouchMove,
+  handleTouchEnd,
 } from "@/lib/helpers";
 import { getDOMElements } from "@/utils/domElements";
 
@@ -13,4 +16,7 @@ export const initEventListeners = () => {
   document.addEventListener("keyup", handleKeyup);
   document.addEventListener("mousemove", handleMouseMove);
   canvasDOM.addEventListener("click", handleClick, false);
+  document.addEventListener("touchstart", handleTouchStart, { passive: true });
+  document.addEventListener("touchmove", handleTouchMove, { passive: true });
+  document.addEventListener("touchend", handleTouchEnd);
 };
